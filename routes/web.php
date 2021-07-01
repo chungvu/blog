@@ -29,3 +29,10 @@ require __DIR__.'/auth.php';
 
 
 Route::resource('products', ProductController::class);
+Route::get('/blo1g',function (){
+    return view('blog/index');
+});
+
+//Blog
+Route::get('/blog', [\App\Http\Controllers\BlogController::class, 'index'])->name('blogListWeb');
+Route::get('/blog/{id}', [\App\Http\Controllers\BlogController::class, 'show'])->name('blogShowWeb');
